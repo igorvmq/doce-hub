@@ -34,7 +34,7 @@ export default function Home() {
 
         <div className="mt-8 space-y-4">
           <div className="rounded-2xl bg-slate-800 p-6 shadow-inner shadow-slate-950/20">
-            <h2 className="text-xl font-semibold text-white">Status da conexão</h2>
+            <h2 className="text-xl font-semibold text-white">Status da conexão.</h2>
             <p className="mt-2 text-slate-300">{status}</p>
           </div>
 
