@@ -1,0 +1,16 @@
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\doce-hub-api.exe
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\appsettings.Development.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\appsettings.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\doce-hub-api.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\doce-hub-api.deps.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\doce-hub-api.runtimeconfig.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\doce-hub-api.pdb
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Microsoft.EntityFrameworkCore.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Microsoft.EntityFrameworkCore.Relational.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Microsoft.OpenApi.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\MySqlConnector.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Pomelo.EntityFrameworkCore.MySql.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Swashbuckle.AspNetCore.Swagger.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\publish\Swashbuckle.AspNetCore.SwaggerUI.dll

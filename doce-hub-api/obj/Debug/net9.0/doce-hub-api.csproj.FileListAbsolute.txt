@@ -37,3 +37,4 @@ E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\Swashbuckle.Asp
 E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\obj\Debug\net9.0\doce-hub-api.MvcApplicationPartsAssemblyInfo.cs
 E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\obj\Debug\net9.0\doce-hub.9429C55E.Up2Date
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\obj\Debug\net9.0\doce-hub-api.sourcelink.json
