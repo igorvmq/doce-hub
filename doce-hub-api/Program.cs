@@ -28,8 +28,7 @@ builder.Services.AddCors(options =>
     {
          policy
             .WithOrigins(
-                "https://doce-hub.vercel.app/",
-                "http://localhost:3000"
+                "https://doce-hub.vercel.app/"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
