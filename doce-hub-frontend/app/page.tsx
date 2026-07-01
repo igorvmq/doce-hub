@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 //const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://localhost:5000';
-const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'http://docehubapi.runasp.net/';
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ?? 'https://docehubapi.runasp.net/';
 
 
 console.log('API Base URL:', apiBaseUrl);
