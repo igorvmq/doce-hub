@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("doce-hub-api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+04969829cf48986771f04c3f49bfd41b6721104e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30f2dee573fe4552459a0e04b2ad8fe5e35d0493")]
 [assembly: System.Reflection.AssemblyProductAttribute("doce-hub-api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("doce-hub-api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
