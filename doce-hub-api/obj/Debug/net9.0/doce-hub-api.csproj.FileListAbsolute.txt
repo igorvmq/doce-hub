@@ -38,3 +38,9 @@ E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\Swashbuckle.Asp
 E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\obj\Debug\net9.0\doce-hub-api.MvcApplicationPartsAssemblyInfo.cs
 E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\obj\Debug\net9.0\doce-hub.9429C55E.Up2Date
 E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\obj\Debug\net9.0\doce-hub-api.sourcelink.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\publish\web.config
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\publish\appsettings.Development.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\publish\appsettings.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\publish\doce-hub-api.deps.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\publish\doce-hub-api.runtimeconfig.json
+E:\desenvolvimento\dotnet\doce-hub\doce-hub-api\bin\Debug\net9.0\publish\doce-hub-api.staticwebassets.endpoints.json

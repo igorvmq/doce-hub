@@ -28,7 +28,8 @@ builder.Services.AddCors(options =>
     {
          policy
             .WithOrigins(
-                "https://doce-hub.vercel.app"
+                "https://doce-hub.vercel.app",
+                "http://localhost:3000"
             )
             .AllowAnyHeader()
             .AllowAnyMethod();
@@ -426,8 +427,8 @@ app.MapPost("/checkout/mercadopago", async (CriarPedidoCheckoutRequest request, 
     var backUrls = new Dictionary<string, string>();
     if (!string.IsNullOrWhiteSpace(request.SuccessUrlBase))
     {
-        backUrls["success"] = "https://google.com";
-        //backUrls["success"] = $"{request.SuccessUrlBase}?pedidoId={pedido.Id}&status=approved";
+        //backUrls["success"] = "https://google.com";
+        backUrls["success"] = $"{request.SuccessUrlBase}?pedidoId={pedido.Id}&status=approved";
     }
     if (!string.IsNullOrWhiteSpace(request.FailureUrlBase))
     {
