@@ -59,7 +59,7 @@ function InfoRow({ label, value }: { label: string; value: string }) {
 export default function OrderConfirmedPage() {
   const searchParams = useSearchParams();
   const pedidoId = searchParams.get("pedidoId");
-  const status = searchParams.get("status") ?? "approved";
+  const status = (searchParams.get("status") ?? searchParams.get("collection_status") ?? "approved").toLowerCase();
 
   const [pedido, setPedido] = useState<PedidoDetalhes | null>(null);
   const [loading, setLoading] = useState(true);
@@ -92,10 +92,10 @@ export default function OrderConfirmedPage() {
   }, [pedidoId]);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && pedidoId && status === "approved") {
+    if (typeof window !== "undefined" && (status === "approved" || searchParams.get("collection_status")?.toLowerCase() === "approved")) {
       localStorage.removeItem(CART_KEY);
     }
-  }, [pedidoId, status]);
+  }, [searchParams, status]);
 
   const formatMoney = (value: number) => `R$${value.toFixed(2).replace(".", ",")}`;
 
@@ -146,7 +146,7 @@ export default function OrderConfirmedPage() {
     <div className="min-h-screen bg-zinc-50 font-sans flex flex-col">
       <header className="bg-white border-b border-zinc-100 shadow-sm">
         <div className="max-w-lg mx-auto px-4 py-5 flex justify-center">
-          <span className="text-2xl font-black tracking-tight text-zinc-900 uppercase">Doce Hub</span>
+          <img src="/logo-doce-hub.png" alt="Doce Hub" className="h-12 w-auto object-contain" />
         </div>
       </header>
 

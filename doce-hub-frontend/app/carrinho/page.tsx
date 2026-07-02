@@ -279,7 +279,7 @@ export default function CartPage() {
     <div className="min-h-screen bg-zinc-50 font-sans">
       <header className="bg-white border-b border-zinc-100 shadow-sm">
         <div className="max-w-lg mx-auto px-4 py-5 flex justify-center">
-          <span className="text-2xl font-black tracking-tight text-zinc-900 uppercase">Doce Hub</span>
+          <img src="/logo-doce-hub.png" alt="Doce Hub" className="h-12 w-auto object-contain" />
         </div>
       </header>
 

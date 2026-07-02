@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:5000";
 
@@ -215,11 +216,15 @@ function CartaoPedido({
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function PaginaPedidosAdmin() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [pedidos, setPedidos] = useState<Pedido[]>([]);
   const [busca, setBusca] = useState("");
   const [ordenarPor, setOrdenarPor] = useState("status");
   const [menuOrdenacaoAberto, setMenuOrdenacaoAberto] = useState(false);
-  const [abaSelecionada, setAbaSelecionada] = useState<"pedidos" | "financeiro">("pedidos");
+  const [abaSelecionada, setAbaSelecionada] = useState<"pedidos" | "financeiro">(
+    pathname?.includes("/admin/informativo") ? "financeiro" : "pedidos"
+  );
   const [carregando, setCarregando] = useState(true);
   const [pagina, setPagina] = useState(1);
   const PAGE_SIZE = 15;
@@ -280,6 +285,10 @@ export default function PaginaPedidosAdmin() {
     buscarPagina(1);
   }, []);
 
+  useEffect(() => {
+    setAbaSelecionada(pathname?.includes("/admin/informativo") ? "financeiro" : "pedidos");
+  }, [pathname]);
+
   const tratarMudancaStatus = async (id: number, status: StatusPedido) => {
     try {
       const mapeamentoStatus: Record<StatusPedido, string> = {
@@ -339,7 +348,7 @@ export default function PaginaPedidosAdmin() {
       {/* ── Header ───────────────────────────────────────────────── */}
       <header className="bg-white border-b border-zinc-100 shadow-sm">
         <div className="max-w-lg mx-auto px-4 py-5 flex justify-center">
-          <span className="text-2xl font-black tracking-tight text-zinc-900 uppercase">Doce Hub</span>
+          <img src="/logo-doce-hub.png" alt="Doce Hub" className="h-12 w-auto object-contain" />
         </div>
       </header>
 
@@ -423,13 +432,13 @@ export default function PaginaPedidosAdmin() {
       <footer className="fixed bottom-0 inset-x-0 z-30">
         <div className="max-w-lg mx-auto flex">
           <button
-            onClick={() => setAbaSelecionada("pedidos")}
+            onClick={() => router.push("/admin/pedidos")}
             className={`flex-1 py-5 text-center transition-colors duration-150 ${abaSelecionada === "pedidos" ? "bg-amber-400 text-zinc-900" : "bg-white text-zinc-400 border-t border-zinc-100"}`}
           >
             <span className="text-xs font-black uppercase tracking-widest">Pedidos</span>
           </button>
           <button
-            onClick={() => setAbaSelecionada("financeiro")}
+            onClick={() => router.push("/admin/informativo")}
             className={`flex-1 py-5 text-center transition-colors duration-150 ${abaSelecionada === "financeiro" ? "bg-amber-400 text-zinc-900" : "bg-white text-zinc-400 border-t border-zinc-100"}`}
           >
             <span className="text-xs font-black uppercase tracking-widest">Financeiro</span>

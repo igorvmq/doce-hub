@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 
 const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL ?? "http://localhost:5000";
 
@@ -163,11 +164,15 @@ function ChevronDown({ aberto }: { aberto: boolean }) {
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
 export default function PaginaInformativoAdmin() {
+  const router = useRouter();
+  const pathname = usePathname();
   const [periodo, setPeriodo] = useState<Periodo>("hoje");
   const [menuAberto, setMenuAberto] = useState(false);
   const [ordenacao, setOrdenacao] = useState<"alfabetica" | "valor">("alfabetica");
   const [menuOrdenacaoAberto, setMenuOrdenacaoAberto] = useState(false);
-  const [abaSelecionada, setAbaSelecionada] = useState<"pedidos" | "financeiro">("financeiro");
+  const [abaSelecionada, setAbaSelecionada] = useState<"pedidos" | "financeiro">(
+    pathname?.includes("/admin/informativo") ? "financeiro" : "pedidos"
+  );
   const [carregando, setCarregando] = useState(true);
   const inicialDados = periodos.reduce((acc, p) => {
     acc[p] = { categorias: [], total: { label: "Total", receita: 0, produtosVendidos: 0, pedidos: 0 } } as DadosPeriodo;
@@ -175,6 +180,10 @@ export default function PaginaInformativoAdmin() {
   }, {} as Record<Periodo, DadosPeriodo>);
 
   const [dados, setDados] = useState<Record<Periodo, DadosPeriodo>>(inicialDados);
+
+  useEffect(() => {
+    setAbaSelecionada(pathname?.includes("/admin/informativo") ? "financeiro" : "pedidos");
+  }, [pathname]);
 
   useEffect(() => {
     const buscarDados = async () => {
@@ -289,7 +298,7 @@ export default function PaginaInformativoAdmin() {
       {/* ── Header ───────────────────────────────────────────────── */}
       <header className="bg-white border-b border-zinc-100 shadow-sm">
         <div className="max-w-lg mx-auto px-4 py-5 flex justify-center">
-          <span className="text-2xl font-black tracking-tight text-zinc-900 uppercase">Doce Hub</span>
+          <img src="/logo-doce-hub.png" alt="Doce Hub" className="h-12 w-auto object-contain" />
         </div>
       </header>
 
@@ -376,7 +385,7 @@ export default function PaginaInformativoAdmin() {
       <footer className="fixed bottom-0 inset-x-0 z-30">
         <div className="max-w-lg mx-auto flex">
           <button
-            onClick={() => setAbaSelecionada("pedidos")}
+            onClick={() => router.push("/admin/pedidos")}
             className={`flex-1 py-5 text-center transition-colors duration-150 ${
               abaSelecionada === "pedidos"
                 ? "bg-amber-400 text-zinc-900"
@@ -386,7 +395,7 @@ export default function PaginaInformativoAdmin() {
             <span className="text-xs font-black uppercase tracking-widest">Pedidos</span>
           </button>
           <button
-            onClick={() => setAbaSelecionada("financeiro")}
+            onClick={() => router.push("/admin/informativo")}
             className={`flex-1 py-5 text-center transition-colors duration-150 ${
               abaSelecionada === "financeiro"
                 ? "bg-amber-400 text-zinc-900"
